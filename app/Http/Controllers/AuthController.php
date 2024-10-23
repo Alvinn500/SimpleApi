@@ -97,7 +97,7 @@ class AuthController extends Controller
             "data" => $user,
             "token" => $token,
             "status" => 200
-        ], 200);
+        ], 200)->cookie('token', $token, 60 * 24);
     }
 
     public function logout(Request $request)
